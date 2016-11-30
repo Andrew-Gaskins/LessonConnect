@@ -1,0 +1,75 @@
+
+<% if !user_signed_in? %>
+
+	<div class="top">
+		<h1 class="center-it">Welcome to Lesson Connect</h1>
+	</div>
+
+	<div class="row">	
+		<div class="col-md-6">
+			<%= link_to new_user_session_path do %>
+				<div class="well">
+					<h3>Sign In</h3>
+				</div>	
+			<% end %>
+		</div>
+		<div class= "col-md-6">
+			<%= link_to new_user_registration_path do %>
+				<div class="well col-md-6">
+					<h3>Teacher Sign up</h3>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+<% elsif current_user.user_type == "teacher" %>
+	<h1><%= "Welcome back, #{current_user.name}." %></h1>
+	<p>Check in with your students below or click 'Inbox' to view messages</p><br />
+	<div class="row">
+		<% @my_students.each do |student| %>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<p><strong><%= student.name %></strong> | <em><%= student.instrument %></em></p>
+						<p><%= student.email %></p>
+					</div>
+				</div>
+			</div>
+		<% end %>
+			<div class="col-md-4">
+				<div class="panel panel-default">
+					<%= link_to new_student_path do %>
+						<div class="panel-body center-it">
+							<p>Add a New Student</p>
+							<p><icon class="glyphicon glyphicon-plus"></p>
+						</div>
+					<% end %>
+				</div>
+			</div>
+	</div>
+
+<% elsif current_user.user_type == "student" %>
+	<div>
+		<h1 class="center-it"><%= "Welcome back, #{current_user.name}." %></h1><br />
+		<h3 class="center-it">What would you like to do today?</h3>
+</div>
+
+
+	<div class="row">	
+		<div class="col-md-6">
+			<%= link_to new_upload_path do %>
+				<div class="well">
+					<h3>Upload a File</h3>
+				</div>	
+			<% end %>
+		</div>
+		<div class= "col-md-6">
+			<%= link_to new_conversation_path do %>
+				<div class="well col-md-6">
+					<h3>Message your Teacher</h3>
+				</div>
+			<% end %>
+		</div>
+	</div>
+<% end %>
+

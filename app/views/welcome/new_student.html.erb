@@ -1,0 +1,45 @@
+
+  <h2>Add a New Student</h2>
+
+  <%= form_tag(create_student_path) do %>
+    <div class="field">
+      <%= label_tag :name %><br />
+      <%= text_field_tag :name, nil, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :instrument %><br />
+      <%= text_field_tag :instrument %>
+    </div>
+
+    <div class="field">
+      <%= hidden_field_tag :teacher_id, current_user.id %>
+    </div>
+
+    <div>
+      <%= hidden_field_tag :user_type, "student" %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :email %><br />
+      <%= email_field_tag :email %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= password_field_tag :password, nil, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :password_confirmation %><br />
+      <%= password_field_tag :password_confirmation, nil, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag "Sign up" %>
+    </div>
+
+<% end %>

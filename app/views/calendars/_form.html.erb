@@ -1,0 +1,52 @@
+<%= form_for(calendar) do |f| %>
+  <% if calendar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(calendar.errors.count, "error") %> prohibited this calendar from being saved:</h2>
+
+      <ul>
+      <% calendar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :student_name %>
+    <%= f.text_field :student_name %>
+    <p>Type 'Available' to display an available time slot</p>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :day %>
+    <%= f.select :day, %w(Monday Tuesday Wednesday Thursday Friday Saturday Sunday) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start_time %>
+    <%= f.time_select :start_time, {:ampm => true} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.time_select :end_time, {:ampm => true} %>
+  </div>
+
+  <div class="field">
+    <strong>Notes for student</strong>
+    <%= f.text_field :note, :size => 75 %>
+  </div>
+
+  <div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,209 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schedule</h1><%= link_to 'Add Lesson', new_calendar_path, class: "btn btn-success" %>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Monday</h2>
+    </div>
+    <div class="panel-body">
+      <% @mondays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Tuesday</h2>
+    </div>
+    <div class="panel-body">
+      <% @tuesdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Wednesday</h2>
+    </div>
+    <div class="panel-body">
+      <% @wednesdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Thursday</h2>
+    </div>
+    <div class="panel-body">
+      <% @thursdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Friday</h2>
+    </div>
+    <div class="panel-body">
+      <% @fridays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Saturday</h2>
+    </div>
+    <div class="panel-body">
+      <% @saturdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Sunday</h2>
+    </div>
+    <div class="panel-body">
+      <% @sundays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+            <%= link_to 'Edit', edit_calendar_path(calendar) %>
+            <%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>

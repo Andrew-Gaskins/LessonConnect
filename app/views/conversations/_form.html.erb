@@ -1,0 +1,25 @@
+<%= form_for :conversation, url: :conversations, html: { class: "" } do |f| %>
+  <div class="form-group">
+    <% if current_user.user_type == "teacher" %>
+      <%= f.label :recipients %> (control + click to select multiple)
+      <%= f.select(:recipients, User.where(teacher_id: current_user.id).order(:name).collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%>
+
+    <% else %>
+      <%= f.label :recipients %> | Click your teacher's name
+      <%= f.select(:recipients, User.where(id: current_user.teacher_id).order(:name).collect {|p| [ p.name, p.id ] }, {}, { multiple: true , class: "form-control" })%>
+    <% end %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :subject %>
+    <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
+  </div>
+
+  <%= f.submit "Send Message", class: "btn btn-success" %>
+
+<% end %>

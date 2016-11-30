@@ -1,0 +1,213 @@
+<p id="notice"><%= notice %></p>
+
+  <h1>Your Teacher's Schedule</h1>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Monday</h2>
+    </div>
+    <div class="panel-body">
+      <% @mondays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Tuesday</h2>
+    </div>
+    <div class="panel-body">
+      <% @tuesdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Wednesday</h2>
+    </div>
+    <div class="panel-body">
+      <% @wednesdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Thursday</h2>
+    </div>
+    <div class="panel-body">
+      <% @thursdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Friday</h2>
+    </div>
+    <div class="panel-body">
+      <% @fridays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Saturday</h2>
+    </div>
+    <div class="panel-body">
+      <% @saturdays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Sunday</h2>
+    </div>
+    <div class="panel-body">
+      <% @sundays.each do |calendar| %>
+        <% if calendar.student_name == "Available" %>
+          <div class="well, available">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% elsif calendar.student_name == current_user.name %>
+          <div class="well, thats_me">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+            <p><%= calendar.note %></p>
+          </div>
+        <% else %>
+          <div class="well">
+            <p><%= calendar.start_time.strftime("%l:%M%p") %> to <%= calendar.end_time.strftime("%l:%M%p") %></p>
+            <p><%= calendar.student_name %></p>
+            <p>at <%= calendar.location %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
